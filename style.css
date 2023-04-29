@@ -1,34 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Rubik:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Rubik:wght@300&display=swap");
 
 /* Boiler Plate */
 :root {
-    --mobile-width: 20.833rem;
-    --desktop-width: 80rem;
+  --mobile-width: 20.833rem;
+  --desktop-width: 80rem;
 
-    --color-very-dark-grey: hsl(0, 0%, 17%);
-    --color--dark-grey: hsl(0, 0%, 59%);
+  --color-very-dark-grey: hsl(0, 0%, 17%);
+  --color--dark-grey: hsl(0, 0%, 59%);
 
-    --font-rubik: 'Rubik', sans-serif;
-    --font-wwight-bold: 400;
-    --font-wwight-bolder: 500;
-    --font-wwight-boldest: 700;
+  --font-rubik: "Rubik", sans-serif;
+  --font-weight-bold: 400;
+  --font-weight-bolder: 500;
+  --font-weight-boldest: 700;
 }
 
-html{
-    font-size: 18px;
-    font-family: var(--font-rubik);
+html {
+  font-size: 18px;
+  font-family: var(--font-rubik);
 }
 
-body{
-    background-image: url("./images/pattern-bg-mobile.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  background-image: url("./images/pattern-bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    height: 100vh;
+  height: 100vh;
 }
 
-@media(min-width: 376px) {
-    body{
-        background-image: url("./images/pattern-bg-desktop.png");
-    }
+@media (min-width: 376px) {
+  body {
+    background-image: url("./images/pattern-bg-desktop.png");
+  }
+}
+
+/* Tags */
+h2,
+h4 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+  height: 2.25rem;
+  padding: 0 0 0 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+button {
+  height: 2.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.5rem;
+  border: none;
 }
