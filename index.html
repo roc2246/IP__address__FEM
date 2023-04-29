@@ -14,41 +14,38 @@
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
   <body>
-    <header>
-      <h1 class="tracker-heading">IP Address Tracker</h1>
+    <h1 class="tracker-heading">IP Address Tracker</h1>
 
-      <form method="GET" class="get-info">
-        <input
-          type="text"
-          name="address"
-          id="address"
-          class="get-info__input"
-        />
-        <button class="get-info__submit">></button>
-      </form>
-    </header>
-    <main>
-      <section class="ip-location">
-        <div class="ip-location__stat">
-          <h4 class="ip-location__stat--heading">IP Address</h4>
-          <h2 class="ip-location__stat--info">&nbsp;</h2>
-        </div>
-        <div class="ip-location__stat">
-          <h4 class="ip-location__stat--heading">Location</h4>
-          <h2 class="ip-location__stat--info">None</h2>
-        </div>
-        <div class="ip-location__stat">
-          <h4 class="ip-location__stat--heading">Timezone</h4>
-          <h2 class="ip-location__stat--info">None</h2>
-        </div>
-        <div class="ip-location__stat">
-          <h4 class="ip-location__stat--heading">ISP</h4>
-          <h2 class="ip-location__stat--info">None</h2>
-        </div>
-      </section>
+    <form method="GET" class="get-info">
+      <input
+        type="text"
+        name="address"
+        id="address"
+        placeholder="Seach for any IP address or domain"
+        class="get-info__input"
+      />
+      <button class="get-info__submit">></button>
+    </form>
+    <section class="ip-location">
+      <div class="ip-location__stat">
+        <h4 class="ip-location__stat--heading">IP Address</h4>
+        <h2 class="ip-location__stat--info">&nbsp;</h2>
+      </div>
+      <div class="ip-location__stat">
+        <h4 class="ip-location__stat--heading">Location</h4>
+        <h2 class="ip-location__stat--info">None</h2>
+      </div>
+      <div class="ip-location__stat">
+        <h4 class="ip-location__stat--heading">Timezone</h4>
+        <h2 class="ip-location__stat--info">None</h2>
+      </div>
+      <div class="ip-location__stat">
+        <h4 class="ip-location__stat--heading">ISP</h4>
+        <h2 class="ip-location__stat--info">None</h2>
+      </div>
+    </section>
 
-      <section class="map">&nbsp;</section>
-    </main>
+    <section class="map">&nbsp;</section>
 
     <script src="script.js"></script>
   </body>
