@@ -2,8 +2,8 @@
 
 /* Boiler Plate */
 :root {
-  --mobile-width: 20.833rem;
-  --desktop-width: 80rem;
+  --mobile-width: 23.438rem;
+  --desktop-width: 90rem;
 
   --color-very-dark-grey: hsl(0, 0%, 17%);
   --color--dark-grey: hsl(0, 0%, 59%);
@@ -61,46 +61,45 @@ button {
   color: white;
 }
 
-button:hover{
-    background-color: var(--color--dark-grey);
+button:hover {
+  background-color: var(--color--dark-grey);
 }
 
 /* Top Heading */
-.tracker-heading{
-    text-align: center;
-    color: white;
+.tracker-heading {
+  text-align: center;
+  color: white;
 }
 
 /* Submit IP Address */
-.get-info{
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
+.get-info {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
-.get-info__input{
-    cursor: pointer;
-    width: 100%;
-    max-width: 25rem;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
-
-.get-info__input:active{
-    
+.get-info__input {
+  cursor: pointer;
+  width: 100%;
+  max-width: 25rem;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
-.get-info__submit{
-    cursor: pointer;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-
-width: 3rem;
+.get-info__input:active {
 }
 
-.get-info__submit--icon{
-    height: auto;
-    width: .5rem;
+.get-info__submit {
+  cursor: pointer;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+
+  width: 3rem;
+}
+
+.get-info__submit--icon {
+  height: auto;
+  width: 0.5rem;
 }
