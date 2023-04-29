@@ -6,9 +6,9 @@
   --desktop-width: 90rem;
 
   --color-very-dark-grey: hsl(0, 0%, 17%);
-  --color--dark-grey: hsl(0, 0%, 59%);
+  --color-dark-grey: hsl(0, 0%, 59%);
 
-  --font-rubik: "Rubik", sans-serif;
+  --font-family-rubik: "Rubik", sans-serif;
   --font-weight-bold: 400;
   --font-weight-bolder: 500;
   --font-weight-boldest: 700;
@@ -16,7 +16,7 @@
 
 html {
   font-size: 16px;
-  font-family: var(--font-rubik);
+  font-family: var(--font-family-rubik);
 }
 
 body {
@@ -62,7 +62,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--color--dark-grey);
+  background-color: var(--color-dark-grey);
 }
 
 /* Top Heading */
