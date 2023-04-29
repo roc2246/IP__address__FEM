@@ -51,8 +51,17 @@ button {
   height: 2.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: white;
   background-color: black;
   border-radius: 0.5rem;
   border: none;
+
+  color: white;
+}
+
+
+/* Submit IP Address */
+
+.get-info__submit--icon{
+    height: auto;
+    width: .5rem;
 }
