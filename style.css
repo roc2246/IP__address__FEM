@@ -28,8 +28,8 @@ body {
   background-size: cover;
 
   height: 100vh;
-  /* margin: 2rem 2rem 0 2rem; */
   margin: 0;
+  overflow: hidden;
 }
 
 @media (min-width: 376px) {
@@ -109,6 +109,8 @@ button:hover {
 
 /* IP Location */
 .ip-location{
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,6 +121,7 @@ button:hover {
   margin: 1.5rem 2rem 1.5rem 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+
 }
 
 .ip-location__stat--heading,
@@ -130,9 +133,11 @@ button:hover {
   color: var(--color-dark-grey);
 }
 
-
+/* Map */
 .map{
+  z-index: 0;
   background-color: red;
   width: 100%;
-  height: 50%;
+  height: 100vh;
+  transform: translate(0, -13rem);
 }
