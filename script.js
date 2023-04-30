@@ -26,7 +26,6 @@ function newMapCont() {
   newMap.id = "map";
   parent.appendChild(newMap);
 }
-
 function initMap(lat, lng) {
   const map = L.map("map").setView([lat, lng], 13);
 
@@ -43,6 +42,22 @@ function initMap(lat, lng) {
     iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
   });
   L.marker([lat, lng], { icon: locationIcon }).addTo(map);
+
+  const mapCont = document.getElementById("map");
+  const zoomIn = document.getElementsByClassName("leaflet-control-zoom-in")[0]
+  const zoomOut = document.getElementsByClassName("leaflet-control-zoom-out")[0]
+
+  function readjustMap (unit) {
+    mapCont.style.height = unit
+  }
+
+  zoomIn.onclick = () => {
+    readjustMap("80vh")
+  }
+
+  zoomOut.onclick = () => {
+    readjustMap("80vh")
+  }
 }
 
 getAddress.submitQuery.onclick = (e) => {
