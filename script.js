@@ -40,6 +40,13 @@ getAddress.submitQuery.onclick = (e) => {
 
   getAddress.getData().then((data) => {
     const { location, isp } = data;
+    const body = document.getElementsByTagName("body")[0]
+
+    document.getElementById("map").remove()
+    const newMap = document.createElement("section")
+    newMap.id = "map"
+    body.appendChild(newMap)
+
 
     result.IP.innerHTML = getAddress.IPinput.value;
     result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
