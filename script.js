@@ -20,7 +20,7 @@ const result = {
 function newMapCont() {
   const parent = document.getElementsByTagName("body")[0];
   const mapCont = document.getElementById("map");
-  const newMap = document.createElement("section");
+  const newMap = document.createElement("div");
 
   mapCont.remove();
   newMap.id = "map";
