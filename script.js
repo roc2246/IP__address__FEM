@@ -12,6 +12,7 @@ const getAddress = {
 
 getAddress.submitQuery.onclick = (e) => {
   e.preventDefault();
+  getAddress.IPinput.value = ""
  
   getAddress.getData().then((data) => {
     console.log(data);
