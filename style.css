@@ -131,16 +131,29 @@ button:hover {
   color: var(--color-dark-grey);
 }
 
+.ip-location__stat--info{
+  word-wrap: break-word;
+}
+
+.ip-location__divider{
+  display: none;
+  border-left: .25rem solid grey;
+  height: 4rem;
+}
+
 @media (min-width: 376px) {
   .ip-location{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 
-    max-width: 30rem;
+    max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
     padding-right: 15rem;
+  }
+  .ip-location__divider{
+    display: block;
   }
 }
 
