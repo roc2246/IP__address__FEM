@@ -35,12 +35,7 @@ getAddress.submitQuery.onclick = (e) => {
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
 
-    var circle = L.circle([location.lat, location.lng], {
-      color: "red",
-      fillColor: "#f03",
-      fillOpacity: 0.5,
-      radius: 500,
-    }).addTo(map);
+    var marker = L.marker([location.lat, location.lng]).addTo(map);
 
     getAddress.IPinput.value = "";
   });
