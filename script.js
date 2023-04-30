@@ -35,7 +35,14 @@ getAddress.submitQuery.onclick = (e) => {
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
 
-    var marker = L.marker([location.lat, location.lng]).addTo(map);
+
+    var locationIcon = L.icon({
+      iconUrl: './images/icon-location.svg',
+  
+      iconSize:     [80, 100], // size of the icon
+      iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  });
+    L.marker([location.lat, location.lng], {icon: locationIcon}).addTo(map);
 
     getAddress.IPinput.value = "";
   });
