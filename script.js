@@ -39,8 +39,8 @@ function initMap(lat, lng) {
   const locationIcon = L.icon({
     iconUrl: "./images/icon-location.svg",
 
-    iconSize: [80, 100], // size of the icon
-    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    iconSize: [80, 100], 
+    iconAnchor: [22, 94], 
   });
   L.marker([lat, lng], { icon: locationIcon }).addTo(map);
 
