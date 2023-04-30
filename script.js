@@ -22,10 +22,11 @@ function newMapCont() {
   const mapCont = document.getElementById("map");
   const newMap = document.createElement("div");
 
-  mapCont.remove();
+  if (mapCont) mapCont.remove();
   newMap.id = "map";
   parent.appendChild(newMap);
 }
+
 function initMap(lat, lng) {
   const map = L.map("map").setView([lat, lng], 13);
 
@@ -43,21 +44,14 @@ function initMap(lat, lng) {
   });
   L.marker([lat, lng], { icon: locationIcon }).addTo(map);
 
-  const mapCont = document.getElementById("map");
-  const zoomIn = document.getElementsByClassName("leaflet-control-zoom-in")[0]
-  const zoomOut = document.getElementsByClassName("leaflet-control-zoom-out")[0]
+  const zoomIn = document.getElementsByClassName("leaflet-control-zoom-in")[0];
+  const zoomOut = document.getElementsByClassName(
+    "leaflet-control-zoom-out"
+  )[0];
+  zoomIn.remove()
+  zoomOut.remove()
 
-  function readjustMap (unit) {
-    mapCont.style.height = unit
-  }
 
-  zoomIn.onclick = () => {
-    readjustMap("80vh")
-  }
-
-  zoomOut.onclick = () => {
-    readjustMap("80vh")
-  }
 }
 
 getAddress.submitQuery.onclick = (e) => {
