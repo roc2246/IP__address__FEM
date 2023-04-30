@@ -16,6 +16,25 @@ const result = {
   timezone: document.getElementsByClassName("ip-location__stat--info")[2],
   ISP: document.getElementsByClassName("ip-location__stat--info")[3],
 };
+
+function initMap(lat, lng) {
+  const map = L.map("map").setView([lat, lng], 13);
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  var locationIcon = L.icon({
+    iconUrl: "./images/icon-location.svg",
+
+    iconSize: [80, 100], // size of the icon
+    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+  });
+  L.marker([lat, lng], { icon: locationIcon }).addTo(map);
+}
+
 getAddress.submitQuery.onclick = (e) => {
   e.preventDefault();
 
@@ -27,22 +46,7 @@ getAddress.submitQuery.onclick = (e) => {
     result.timezone.innerHTML = `UTC ${location.timezone}`;
     result.ISP.innerHTML = isp;
 
-    var map = L.map("map").setView([location.lat, location.lng], 13);
-
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
-
-
-    var locationIcon = L.icon({
-      iconUrl: './images/icon-location.svg',
-  
-      iconSize:     [80, 100], // size of the icon
-      iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  });
-    L.marker([location.lat, location.lng], {icon: locationIcon}).addTo(map);
+    initMap(location.lat, location.lng);
 
     getAddress.IPinput.value = "";
   });
