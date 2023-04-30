@@ -21,12 +21,26 @@ getAddress.submitQuery.onclick = (e) => {
 
   getAddress.getData().then((data) => {
     const { location, isp } = data;
-    console.log(isp);
 
     result.IP.innerHTML = getAddress.IPinput.value;
     result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
     result.timezone.innerHTML = `UTC ${location.timezone}`;
     result.ISP.innerHTML = isp;
+
+    var map = L.map("map").setView([location.lat, location.lng], 13);
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    var circle = L.circle([location.lat, location.lng], {
+      color: "red",
+      fillColor: "#f03",
+      fillOpacity: 0.5,
+      radius: 500,
+    }).addTo(map);
 
     getAddress.IPinput.value = "";
   });
