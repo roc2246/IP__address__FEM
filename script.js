@@ -50,8 +50,6 @@ function initMap(lat, lng) {
   )[0];
   zoomIn.remove()
   zoomOut.remove()
-
-
 }
 
 getAddress.submitQuery.onclick = (e) => {

@@ -73,6 +73,8 @@ button:hover {
 .tracker-heading {
   text-align: center;
   color: white;
+
+  margin-top: 2rem;
 }
 
 /* Submit IP Address */
