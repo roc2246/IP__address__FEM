@@ -17,6 +17,16 @@ const result = {
   ISP: document.getElementsByClassName("ip-location__stat--info")[3],
 };
 
+function newMapCont() {
+  const parent = document.getElementsByTagName("body")[0];
+  const mapCont = document.getElementById("map");
+  const newMap = document.createElement("section");
+  
+  mapCont.remove();
+  newMap.id = "map";
+  parent.appendChild(newMap);
+}
+
 function initMap(lat, lng) {
   const map = L.map("map").setView([lat, lng], 13);
 
@@ -40,13 +50,8 @@ getAddress.submitQuery.onclick = (e) => {
 
   getAddress.getData().then((data) => {
     const { location, isp } = data;
-    const body = document.getElementsByTagName("body")[0]
 
-    document.getElementById("map").remove()
-    const newMap = document.createElement("section")
-    newMap.id = "map"
-    body.appendChild(newMap)
-
+    newMapCont();
 
     result.IP.innerHTML = getAddress.IPinput.value;
     result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
