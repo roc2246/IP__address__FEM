@@ -89,7 +89,7 @@ getAddress.submitQuery.onclick = (e) => {
         getAddress.IPinput.value = "";
       });
   } else {
-    alert("Please enter an IP address");
+    alert("Please enter an IP address.");
     getAddress.IPinput.focus();
   }
 };
