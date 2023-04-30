@@ -77,5 +77,10 @@ getAddress.submitQuery.onclick = (e) => {
       alert(error);
       getAddress.IPinput.value = "";
       getAddress.IPinput.focus();
+
+      result.IP.innerHTML = "None";
+      result.location.innerHTML = "None";
+      result.timezone.innerHTML = "None";
+      getAddress.IPinput.value = "None";
     });
 };
