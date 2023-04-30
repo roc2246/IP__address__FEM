@@ -21,7 +21,7 @@ function newMapCont() {
   const parent = document.getElementsByTagName("body")[0];
   const mapCont = document.getElementById("map");
   const newMap = document.createElement("section");
-  
+
   mapCont.remove();
   newMap.id = "map";
   parent.appendChild(newMap);
@@ -48,19 +48,27 @@ function initMap(lat, lng) {
 getAddress.submitQuery.onclick = (e) => {
   e.preventDefault();
 
-  getAddress.getData().then((data) => {
-    const { location, isp } = data;
+  getAddress
+    .getData()
+    .then((data) => {
+      const { location, isp } = data;
 
-    newMapCont();
+      newMapCont();
 
-    result.IP.innerHTML = getAddress.IPinput.value;
-    result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
-    result.timezone.innerHTML = `UTC ${location.timezone}`;
-    isp === "" ? result.ISP.innerHTML = "None" : result.ISP.innerHTML = isp
-    
+      result.IP.innerHTML = getAddress.IPinput.value;
+      result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
+      result.timezone.innerHTML = `UTC ${location.timezone}`;
+      isp === ""
+        ? (result.ISP.innerHTML = "None")
+        : (result.ISP.innerHTML = isp);
 
-    initMap(location.lat, location.lng);
+      initMap(location.lat, location.lng);
 
-    getAddress.IPinput.value = "";
-  });
+      getAddress.IPinput.value = "";
+    })
+    .catch((error) => {
+      alert(error);
+      getAddress.IPinput.value = "";
+      getAddress.IPinput.focus();
+    });
 };

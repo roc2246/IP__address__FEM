@@ -91,9 +91,6 @@ button:hover {
   border-bottom-right-radius: 0 !important;
 }
 
-.get-info__input:active {
-}
-
 .get-info__submit {
   cursor: pointer;
   border-top-left-radius: 0 !important;
