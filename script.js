@@ -36,7 +36,7 @@ function initMap(lat, lng) {
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
 
-  var locationIcon = L.icon({
+  const locationIcon = L.icon({
     iconUrl: "./images/icon-location.svg",
 
     iconSize: [80, 100], // size of the icon
@@ -55,32 +55,41 @@ function initMap(lat, lng) {
 getAddress.submitQuery.onclick = (e) => {
   e.preventDefault();
 
-  getAddress
-    .getData()
-    .then((data) => {
-      const { location, isp } = data;
+  if (getAddress.IPinput.value !== "") {
+    getAddress
+      .getData()
+      .then((data) => {
+        const { location, isp } = data;
 
-      newMapCont();
+        newMapCont();
+        initMap(location.lat, location.lng);
 
-      result.IP.innerHTML = getAddress.IPinput.value;
-      result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
-      result.timezone.innerHTML = `UTC ${location.timezone}`;
-      isp === ""
-        ? (result.ISP.innerHTML = "None")
-        : (result.ISP.innerHTML = isp);
+        getAddress.IPinput.focus();
 
-      initMap(location.lat, location.lng);
+        result.IP.innerHTML = getAddress.IPinput.value;
+        result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
+        result.timezone.innerHTML = `UTC ${location.timezone}`;
+        isp === ""
+          ? (result.ISP.innerHTML = "None")
+          : (result.ISP.innerHTML = isp);
 
-      getAddress.IPinput.value = "";
-    })
-    .catch((error) => {
-      alert(error);
-      getAddress.IPinput.value = "";
-      getAddress.IPinput.focus();
+        getAddress.IPinput.value = "";
+      })
+      .catch((error) => {
+        alert("IP address not found.");
+        console.log(error);
 
-      result.IP.innerHTML = "None";
-      result.location.innerHTML = "None";
-      result.timezone.innerHTML = "None";
-      getAddress.IPinput.value = "None";
-    });
+        getAddress.IPinput.focus();
+
+        result.IP.innerHTML = "None";
+        result.location.innerHTML = "None";
+        result.timezone.innerHTML = "None";
+        result.ISP.innerHTML = "None";
+
+        getAddress.IPinput.value = "";
+      });
+  } else {
+    alert("Please enter an IP address");
+    getAddress.IPinput.focus();
+  }
 };
