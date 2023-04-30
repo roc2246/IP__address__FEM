@@ -48,8 +48,8 @@ function initMap(lat, lng) {
   const zoomOut = document.getElementsByClassName(
     "leaflet-control-zoom-out"
   )[0];
-  zoomIn.remove()
-  zoomOut.remove()
+  zoomIn.remove();
+  zoomOut.remove();
 }
 
 getAddress.submitQuery.onclick = (e) => {
