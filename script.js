@@ -56,7 +56,8 @@ getAddress.submitQuery.onclick = (e) => {
     result.IP.innerHTML = getAddress.IPinput.value;
     result.location.innerHTML = `${location.city}, ${location.region} ${location.postalCode}`;
     result.timezone.innerHTML = `UTC ${location.timezone}`;
-    result.ISP.innerHTML = isp;
+    isp === "" ? result.ISP.innerHTML = "None" : result.ISP.innerHTML = isp
+    
 
     initMap(location.lat, location.lng);
 
