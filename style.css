@@ -114,6 +114,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   background-color: white;
   border-radius: var(--border-radius);
@@ -138,9 +139,12 @@ button:hover {
 .ip-location__divider{
   display: none;
   height: 4rem;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-@media (min-width: 376px) {
+@media (min-width: 721px) {
   .ip-location{
     flex-direction: row;
     flex-wrap: wrap;
@@ -149,7 +153,8 @@ button:hover {
     max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
-    padding-right: 15rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .ip-location__divider{
     display: block;
