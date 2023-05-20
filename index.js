@@ -20,7 +20,7 @@ const getAddress = {
 app.get("/address", (req, res) => {
   try {
     fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=at_KcMC0GkoBIWgrY2WWAWXa09RpazKh&ipAddress=192.168.0.1`
+      `https://geo.ipify.org/api/v2/country,city?apiKey=${getAddress.APIkey}&ipAddress=${test}`
     )
       .then((response) => response.json())
       .then((data) => res.json(data));
