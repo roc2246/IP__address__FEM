@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 
 require("dotenv").config();
@@ -6,6 +7,8 @@ require("dotenv").config();
 const portNo = process.env.PORT || 3000;
 
 const test = "192.168.0.1";
+
+app.use(cors())
 
 const getAddress = {
   APIkey: "at_KcMC0GkoBIWgrY2WWAWXa09RpazKh",
@@ -19,8 +22,9 @@ const getAddress = {
 
 app.get("/address", (req, res) => {
   try {
+    console.log(req)
     fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=${getAddress.APIkey}&ipAddress=${test}`
+      `https://geo.ipify.org/api/v2/country,city?apiKey=${getAddress.APIkey}&ipAddress=${req.address}`
     )
       .then((response) => response.json())
       .then((data) => res.json(data));
