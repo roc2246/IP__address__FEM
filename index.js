@@ -7,8 +7,6 @@ require("dotenv").config();
 
 const portNo = process.env.PORT || 3000;
 
-const test = "192.168.0.1";
-
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.json())
