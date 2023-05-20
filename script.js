@@ -1,5 +1,5 @@
 const getAddress = {
-  APIkey: "at_KcMC0GkoBIWgrY2WWAWXa09RpazKh",
+  APIkey: process.env.API_KEY,
   IPinput: document.getElementsByClassName("get-info__input")[0],
   submitQuery: document.getElementsByClassName("get-info__submit")[0],
   getData: async function getIPaddress() {
