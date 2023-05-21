@@ -1,13 +1,10 @@
 const getAddress = {
-  // APIkey: process.env.API_KEY,
   IPinput: document.getElementsByClassName("get-info__input")[0],
   submitQuery: document.getElementsByClassName("get-info__submit")[0],
   getData: async function getIPaddress() {
-    // const jsonData = `https://geo.ipify.org/api/v2/country,city?apiKey=${this.APIkey}&ipAddress=${this.IPinput.value}`;
     const jsonData = `http://127.0.0.1:3000/address/${this.IPinput.value}`;
     const response = await fetch(jsonData);
     const data = await response.json();
-    console.log(jsonData)
     return data;
   },
 };
