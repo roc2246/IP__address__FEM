@@ -2,7 +2,7 @@ const getAddress = {
   IPinput: document.getElementsByClassName("get-info__input")[0],
   submitQuery: document.getElementsByClassName("get-info__submit")[0],
   getData: async function getIPaddress() {
-    const jsonData = `/address/${this.IPinput.value}`;
+    const jsonData = `http://127.0.0.1:3000/${this.IPinput.value}`;
     const response = await fetch(jsonData);
     const data = await response.json();
     return data;
