@@ -19,11 +19,19 @@ app.use(
 app.get("/:address", (req, res) => {
   try {
     fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.API_KEY}&ipAddress=${req.params.address}`
+      `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.API_KEY}&ipAddress=${req.params.address}`,
+      {
+        method: "GET",
+        headers: {
+          'X-API-KEY': process.env.API_KEY,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      }
     )
       .then((response) => response.json())
       .then((data) => res.json(data));
-      console.log(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.API_KEY}&ipAddress=${req.params.address}`)
+    console.log(`TEST`);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
